@@ -1,0 +1,26 @@
+'use client';
+
+import { useAccount } from 'wagmi';
+
+export default function EmployeeDashboard() {
+  const { isConnected } = useAccount();
+
+  if (!isConnected) {
+    return null;
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <h1 className="text-2xl font-bold text-gray-900">Employee Dashboard</h1>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <p>Simple test version - working on fixing build issues</p>
+      </div>
+    </div>
+  );
+}
